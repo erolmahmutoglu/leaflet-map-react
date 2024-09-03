@@ -5,9 +5,10 @@ import { glob } from "glob";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
+import commonjs from "@rollup/plugin-commonjs";
 
 export default defineConfig({
-  plugins: [react(), libInjectCss(), dts({ include: ["lib"] })],
+  plugins: [react(), commonjs(), libInjectCss(), dts({ include: ["lib"] })],
   build: {
     copyPublicDir: false,
     rollupOptions: {
